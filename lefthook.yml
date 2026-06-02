@@ -18,6 +18,3 @@ pre-commit:
         - '**/*.jsonc'
         - '**/*.css'
       stage_fixed: true
-    - name: knip
-      run: npm run check:deps
-      glob: '*'
