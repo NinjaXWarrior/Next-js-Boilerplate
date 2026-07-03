@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   },
   poweredByHeader: false,
   reactStrictMode: true,
+  transpilePackages: ['@repo/ui'],
 };
 
 export default nextConfig;

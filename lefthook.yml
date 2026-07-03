@@ -4,11 +4,11 @@ commit-msg:
     - name: commitlint
       run: npx --no -- commitlint --edit {1}
 
-# Validate content before committing
+# Validate content before committing (staged files only, kept fast)
 pre-commit:
   jobs:
     - name: ultracite
-      run: npx ultracite fix --type-aware --type-check
+      run: npx ultracite fix --type-aware --type-check {staged_files}
       glob:
         - '**/*.js'
         - '**/*.jsx'
@@ -18,3 +18,15 @@ pre-commit:
         - '**/*.jsonc'
         - '**/*.css'
       stage_fixed: true
+    - name: secretlint
+      run: npx secretlint {staged_files}
+      glob:
+        - '**/*'
+
+# Heavier checks before pushing; CI re-runs everything as the final gate
+pre-push:
+  jobs:
+    - name: check:types
+      run: bun run check:types
+    - name: test
+      run: bun run test

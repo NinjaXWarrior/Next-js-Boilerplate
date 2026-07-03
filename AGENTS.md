@@ -17,7 +17,7 @@
 - Skip recaps unless the result is ambiguous or you need more input.
 
 ## Commands
-Only these `bun run` scripts: `build-local`, `lint`, `check:types`, `check:deps`, `check:i18n`, `test`, `test:e2e`.
+Only these `bun run` scripts: `dev`, `build`, `lint`, `lint:fix`, `check:types`, `check:deps`, `test`, `storybook`, `build-storybook`. Run from repo root — Turborepo fans out to both workspaces; scope one with `--filter=web` / `--filter=@repo/ui`.
 
 ## Git Commits
 Conventional Commits: `type: summary` without scope. The summary should be a short, specific sentence that explains what changed and where or why, not a vague phrase. Types: `feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert`. `BREAKING CHANGE:` footer when needed.

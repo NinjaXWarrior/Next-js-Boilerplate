@@ -11,6 +11,6 @@ export default defineConfig({
     order: 'asc',
   },
   sortTailwindcss: {
-    stylesheet: 'src/styles/global.css',
+    stylesheet: 'apps/web/src/styles/global.css',
   },
 });

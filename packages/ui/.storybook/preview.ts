@@ -1,4 +1,4 @@
-import '../src/styles/global.css';
+import '../src/global.css';
 import type { Preview } from '@storybook/nextjs-vite';
 
 const preview: Preview = {
@@ -8,9 +8,6 @@ const preview: Preview = {
         color: /(background|color)$/iu,
         date: /Date$/iu,
       },
-    },
-    nextjs: {
-      appDirectory: true, // Enable App Router support
     },
     docs: {
       toc: true, // Enable table of contents

@@ -1,3 +1,4 @@
+import { Badge } from '@repo/ui';
 import { ArrowRight, Code2, LayoutGrid, Sparkles } from 'lucide-react';
 import { LocalCounter } from '@/components/LocalCounter';
 
@@ -129,9 +130,7 @@ export default function HomePage() {
               Example pages you can build.
             </h2>
           </div>
-          <span className="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700">
-            No API needed
-          </span>
+          <Badge variant="success">No API needed</Badge>
         </div>
 
         <div className="mt-8 grid gap-6 md:grid-cols-3">
