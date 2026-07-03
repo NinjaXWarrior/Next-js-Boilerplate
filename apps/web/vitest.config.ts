@@ -8,6 +8,7 @@ export default defineConfig({
     tsconfigPaths: true,
   },
   test: {
+    passWithNoTests: true,
     coverage: {
       include: ['src/**/*'],
       exclude: ['src/**/*.stories.{js,jsx,ts,tsx}'],
