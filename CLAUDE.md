@@ -9,7 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a bun + Turborepo monorepo — a trimmed, frontend-only branch of the Next.js Boilerplate (no auth, database, or i18n; see the `main` branch for the full SaaS boilerplate).
 
 - `apps/web` (workspace `web`) — the Next.js 16 App Router application.
-- `packages/ui` (workspace `@repo/ui`) — shared base-component library (`Button`, `Input`, `Card`, `Badge`), meant to be reusable across projects. Consumed by `apps/web` via the `workspace:*` protocol and Next's `transpilePackages`; it ships as raw TypeScript with no build step.
+- `packages/ui` (workspace `@repo/ui`) — shared base-component library (`Button`, `Input`, `Card`, `Badge`, plus Radix-based `Dialog`, `DropdownMenu`, `Select`, `Tabs`, `Tooltip`, `Accordion`), meant to be reusable across projects. Consumed by `apps/web` via the `workspace:*` protocol and Next's `transpilePackages`; it ships as raw TypeScript with no build step.
 
 ## Commands
 
@@ -38,7 +38,8 @@ Lint/format/dep tooling (`ultracite`, `oxlint`, `oxfmt`, `knip`, `typescript`, `
 - Flat file-per-component under `src/` (`Button.tsx`, `Input.tsx`, etc.), each with a co-located `*.stories.tsx` — no per-component subfolders.
 - `package.json` `main`/`types` point straight at `src/index.ts` (the barrel export); there is no `dist`/build output to keep in sync.
 - Ships its own Tailwind/PostCSS setup and `.storybook/` config so Storybook runs fully standalone, independent of `apps/web`.
-- `src/utils/cn.ts` is a minimal classnames combiner — deliberately not clsx/tailwind-merge.
+- `src/utils/cn.ts` combines `clsx` + `tailwind-merge` (needed so `className` overrides on Radix-based components resolve conflicting utilities correctly).
+- `Dialog`, `DropdownMenu`, `Select`, `Tabs`, `Tooltip`, `Accordion` wrap `@radix-ui/react-*` primitives for accessible behavior (focus trap, positioning, portals); styled with the same hardcoded slate palette as `Button`/`Card`/`Input`/`Badge`, not a CSS-variable theme. They don't use `class-variance-authority` — none of them need variant styling beyond what plain conditional classes already cover.
 
 **Shared config**
 - `tsconfig.base.json` holds the strict compiler options shared by both workspaces; each workspace's own `tsconfig.json` extends it and adds its own `paths`/`jsx`/`include`.
