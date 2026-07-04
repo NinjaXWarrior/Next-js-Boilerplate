@@ -14,7 +14,7 @@ Example: Fixes #123
 
 ## Describe this PR
 
-A brief description of how this solves the issue (in present tense).
+A brief description of how this solves the issue.
 
 ## Screenshots
 
