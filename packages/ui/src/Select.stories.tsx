@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './Select';
 
 const meta: Meta<typeof Select> = {

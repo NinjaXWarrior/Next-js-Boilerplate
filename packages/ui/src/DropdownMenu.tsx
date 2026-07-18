@@ -15,7 +15,7 @@ export const DropdownMenuContent = (props: {
     <DropdownMenuPrimitive.Content
       align={props.align ?? 'start'}
       className={cn(
-        'z-50 min-w-40 rounded-lg border border-slate-200 bg-white p-1 shadow-md',
+        'z-50 min-w-40 rounded-lg border border-neutral-200 bg-white p-1 shadow-md',
         props.className,
       )}
       sideOffset={4}
@@ -33,7 +33,7 @@ export const DropdownMenuItem = (props: {
 }) => (
   <DropdownMenuPrimitive.Item
     className={cn(
-      'cursor-pointer rounded-md px-2 py-1.5 text-sm text-slate-700 outline-none transition data-disabled:pointer-events-none data-disabled:opacity-50 data-highlighted:bg-slate-100',
+      'cursor-pointer rounded-md px-2 py-1.5 text-sm text-neutral-700 outline-none transition data-disabled:pointer-events-none data-disabled:opacity-50 data-highlighted:bg-neutral-100',
       props.className,
     )}
     disabled={props.disabled}
@@ -45,12 +45,12 @@ export const DropdownMenuItem = (props: {
 
 export const DropdownMenuLabel = (props: { children: React.ReactNode; className?: string }) => (
   <DropdownMenuPrimitive.Label
-    className={cn('px-2 py-1.5 text-xs font-semibold text-slate-500', props.className)}
+    className={cn('px-2 py-1.5 text-label-sm font-semibold text-neutral-500', props.className)}
   >
     {props.children}
   </DropdownMenuPrimitive.Label>
 );
 
 export const DropdownMenuSeparator = (props: { className?: string }) => (
-  <DropdownMenuPrimitive.Separator className={cn('my-1 h-px bg-slate-200', props.className)} />
+  <DropdownMenuPrimitive.Separator className={cn('my-1 h-px bg-neutral-200', props.className)} />
 );
