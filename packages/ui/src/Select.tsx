@@ -15,14 +15,14 @@ export const SelectTrigger = (props: {
 }) => (
   <SelectPrimitive.Trigger
     className={cn(
-      'flex w-full items-center justify-between gap-2 rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-slate-400 disabled:cursor-not-allowed disabled:opacity-50',
+      'flex w-full items-center justify-between gap-2 rounded-lg border border-neutral-300 px-3 py-2 text-sm outline-none transition focus:border-primary-500 focus:ring-4 focus:ring-primary-100 disabled:cursor-not-allowed disabled:opacity-50',
       props.className,
     )}
     id={props.id}
   >
     {props.children}
     <SelectPrimitive.Icon asChild>
-      <ChevronDownIcon className="size-4 shrink-0 text-slate-500" />
+      <ChevronDownIcon className="size-4 shrink-0 text-neutral-500" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 );
@@ -31,7 +31,7 @@ export const SelectContent = (props: { children: React.ReactNode; className?: st
   <SelectPrimitive.Portal>
     <SelectPrimitive.Content
       className={cn(
-        'z-50 min-w-[var(--radix-select-trigger-width)] overflow-hidden rounded-lg border border-slate-200 bg-white shadow-md',
+        'z-50 min-w-[var(--radix-select-trigger-width)] overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-md',
         props.className,
       )}
       position="popper"
@@ -49,7 +49,7 @@ export const SelectItem = (props: {
 }) => (
   <SelectPrimitive.Item
     className={cn(
-      'relative flex cursor-pointer items-center rounded-md py-1.5 pr-8 pl-2 text-sm text-slate-700 outline-none data-disabled:pointer-events-none data-disabled:opacity-50 data-highlighted:bg-slate-100',
+      'relative flex cursor-pointer items-center rounded-md py-1.5 pr-8 pl-2 text-sm text-neutral-700 outline-none data-disabled:pointer-events-none data-disabled:opacity-50 data-highlighted:bg-neutral-100',
       props.className,
     )}
     disabled={props.disabled}
